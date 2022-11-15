@@ -1,0 +1,100 @@
+<!DOCTYPE html>  
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> &#127973;&#128137; Patient Site  </title>
+
+<style>
+.day2 {
+  font-size: 200%;
+  color: #6666ff;
+}
+
+</style>
+</head>
+
+
+<body syle="extra">
+
+<h1 class="day2"> Welcome to Patient Site Portal </h1> 
+
+
+<h2> In order to get an appointment please fill out the form. <h2>
+
+
+<h2 style=color:black; =background-color:#ffff99;> Patient Information <h2>
+
+<form action="/action_page.php">
+
+  <label style=color:red for="fname"> 1. First name:</label>
+  <input type="text" id="name" name="name" required><br> <br>
+<div style=background-color:yellow> 
+  <label class=day2 for="lname">2. Last name:</label>
+  <input type="text" id="lname" name="lname" required><br> <br>
+</div>
+  <label for="phone"> 3. Phone Number:</label>
+  <input type="tel" id="phone" name="phone" placeholder="123 456-6789" pattern="[0-9]{3} [0-9]{3}-[0-9]{4}" maxlength="16" title="Actual phone number" required> <br> <br>
+
+  <label for="email"> 4. Email Address:</label>
+  <input type="email" id="email" name="email" placeholder="patient@hospital.org" required> <br> <br>
+
+  <label for="dob"> 5. Bhirt Date: </label>  
+  <input type="date"> <br> <br>  
+
+  <label for="photo"> 6. Insurance ID: </label>
+  <input type="file" id="image" name="image"> <br> <br>
+
+  <label for="favcolor"> 7. Favorite Color: </label>
+  <input type="color" id="favcolor" name="favcolor"> <br> <br>
+
+  <label for="brach"> 8. Choose a branch:</label>
+  <select id="branch" name="branch">
+  <option value="medicine">Internal Medicine</option>
+  <option value="gynaecology">Gynaecology</option>
+  <option value="paediatrics">Paediatrics</option>
+  <option value="orthopaedics">Orthopaedics</option>
+  <option value="neurology">Neurology</option>
+  <option value="cardiology">Cardiology</option>
+</select><br> <br>
+
+  <p> 9. Please state your health problems and previous operations, if any. </p> 
+  <textarea name="message" rows="5" cols="80"> operations, medications, allergies, etc. </textarea>
+  <br><br>
+
+  <label for="pain"> 10. Pain (out of 10):</label>
+  <input type="range" id="pain" name="pain" min="0" max="10"> <br><br>
+ 
+  <input type="checkbox" id="consent" name="check" value="1" title="Consent and permission is must!" required onclick="myFunction()">  
+  <label for="consent"> I have a consent. </label> <br>
+
+<p id="text" style="display:none"> I authorize Hospital to perform the treatment or necessary procedure to me/ or to my (for Parent/Guardian) dependent. I confirm that the doctors explained the procedure thoroughly to me and how it will help me with my current condition. 
+I authorize the use of anesthesia and understands the side effects I can experience from it. I authorize blood transfusion for emergency purposes. I understand the risk and complications if I do not follow the instructions given to me after the procedure which involves post-treatment and follow-ups.
+I understand that I am not allowed to eat or drink 4-6 hours before the procedure. I acknowledge that all information I provided int his form is true and accurate.</p>  <br><br>
+
+<script>
+function myFunction() {
+  var checkBox = document.getElementById("consent");
+  var text = document.getElementById("text");
+  if (checkBox.checked == true){
+    text.style.display = "block";
+  } else {
+     text.style.display = "none";
+  }
+}
+</script>
+ 
+  <label for="datesigned"> Date and time form signed:</label>  
+  <input type="datetime-local"> <br> <br>  
+
+
+<input type="reset">  <input type="submit">
+
+
+
+</form>
+
+</body>
+
+</html>
